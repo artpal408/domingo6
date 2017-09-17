@@ -10,16 +10,29 @@ require_once '../Modelo/CarroModelo.php';
 
 $modelo = new CarroModelo();
 
-if($_POST['agregar']){
+if(!empty ($_POST['agregar'])){
     $cmarca = $_POST['marca'];
     $cmodelo = $_POST['modelo'];
 
     $agrego = $modelo->agregarCarro($cmarca,$cmodelo);
 
-    if($agrego){
+    if($agrego == true){
         echo "Exito al agregar dato";
     }else{
         echo "Fallo al agregar dato";
+    }
+}
+
+if($_GET['opcion']){
+    if($_GET['opcion'] == 'eliminar'){
+        $id = $_GET['id'];
+        $elimino = $modelo->desactivarCarro($id);
+
+        if($elimino){
+            echo 'Exito al eliminar carro';
+        }else{
+            echo 'Fallo al eliminar carro';
+        }
     }
 }
 
