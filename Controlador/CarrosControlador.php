@@ -24,10 +24,11 @@ if(!empty ($_POST['agregar'])){
 }
 
 if(!empty ($_POST['guardar'])){
+    $id= $_POST ['id'];
     $cmarca = $_POST['marca'];
     $cmodelo = $_POST['modelo'];
 
-    $agrego = $modelo->actualizarCarro($cmarca,$cmodelo);
+    $agrego = $modelo->actualizarCarro($id, $cmarca, $cmodelo);
 
     if($agrego == true){
         echo "Exito al guardando dato";
