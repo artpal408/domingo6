@@ -23,6 +23,19 @@ if(!empty ($_POST['agregar'])){
     }
 }
 
+if(!empty ($_POST['guardar'])){
+    $cmarca = $_POST['marca'];
+    $cmodelo = $_POST['modelo'];
+
+    $agrego = $modelo->actualizarCarro($cmarca,$cmodelo);
+
+    if($agrego == true){
+        echo "Exito al guardando dato";
+    }else{
+        echo "Fallo al guardando dato";
+    }
+}
+
 
 if($_GET['opcion']){
 
