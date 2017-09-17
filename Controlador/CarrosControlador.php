@@ -23,7 +23,9 @@ if(!empty ($_POST['agregar'])){
     }
 }
 
+
 if($_GET['opcion']){
+
     if($_GET['opcion'] == 'eliminar'){
         $id = $_GET['id'];
         $elimino = $modelo->desactivarCarro($id);
@@ -34,15 +36,19 @@ if($_GET['opcion']){
             echo 'Fallo al eliminar carro';
         }
     }
+
+    if($_GET['opcion']== "editar"){
+        $id=$_GET['id'];
+        $datos = $modelo->obtenerDatosPorId($id);
+        $marcaEditable = $datos ['marca'];
+        $modeloEditable = $datos ['modelo'];
+        //var_dump($datos);
+
+
+    }
 }
 
-if($_GET['opcion']== "editar"){
-   $id=$_GET['$id'];
-   $datos = $CarroModelo->obtenerDatosPorId($id);
-   var_dump($datos);
 
-
-}
 
 
 

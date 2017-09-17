@@ -6,18 +6,21 @@
 <form method="post" action="../Controlador/CarrosControlador.php">
 
     <input name="marca"
+           value="<?php echo (!empty ($marcaEditable)) ? $marcaEditable : '' ?>"
            placeholder="Escriba la marca"
            type="text">
     <br>
 
     <input name="modelo"
+           value="<?php echo (!empty ($modeloEditable)) ? $modeloEditable : '' ?>"
            placeholder="Escriba el modelo"
            type="text">
     <br>
 
     <br>
     <br>
-    <input name="agregar"
+    <input name="<?php echo (!empty ($marcaEditable)) ? 'guardar' : 'agregar'?>"
+
            value="Agregar carro"
            type="submit">
 </form>
