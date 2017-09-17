@@ -14,7 +14,7 @@ class CarroModelo {
 
     public function __construct()
     {
-        $this->enlace = DMysqli();
+        $this->enlace = new DMysqli();
     }
 
     public function mostrarCarros(){
@@ -23,6 +23,23 @@ class CarroModelo {
 
        return $this->enlace->multiples_datos($consulta);
     }
+
+    public function agregarCarro($marca, $modelo){
+        $consulta = sprintf("INSERT INTO carro VALUES (DEFAULT, '%s', '%s', DEFAULT )", $marca,$modelo);
+        return $this->enlace->query($consulta);
+    }
+
+    public function desactivarCarro($id){
+        $consulta = "UPDATE carro set activo = 0 WHERE id = " . $id;
+        return $this->enlace->query($consulta);
+    }
+
+    function eliminarCarro($id){
+        $consulta = "DELETE FROM carro WHERE id = " . $id;
+        return $this->enlace->query($consulta);
+    }
+
+
 
 
 
