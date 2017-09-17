@@ -39,6 +39,10 @@ class CarroModelo {
         return $this->enlace->query($consulta);
     }
 
+    function obtenerDatosPorId($id){
+        $consulta = "SELECT * FROM cliente WHERE activo = 1 and id = " . $id;
+        return $this->enlace->datos($consulta);
+    }
 
 
 

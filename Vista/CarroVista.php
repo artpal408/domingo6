@@ -32,6 +32,7 @@ foreach ($carros as $k => $v) {
 
     <p><?php echo $v['marca'];?></p>
     <p> <a href="../controlador/CarrosControlador.php?opcion=eliminar&id=<?php echo $v['id']; ?>">Eliminar
+        </a> <p> <a href="../controlador/CarrosControlador.php?opcion=editar&id=<?php echo $v['id']; ?>">Editar
         </a>
     </p>
     <?php

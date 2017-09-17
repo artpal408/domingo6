@@ -36,6 +36,16 @@ if($_GET['opcion']){
     }
 }
 
+if($_GET['opcion']== "editar"){
+   $id=$_GET['$id'];
+   $datos = $CarroModelo->obtenerDatosPorId($id);
+   var_dump($datos);
+
+
+}
+
+
+
 $carros = $modelo->mostrarCarros();
 
 include_once '../vista/CarroVista.php';
