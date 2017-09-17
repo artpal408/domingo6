@@ -7,3 +7,9 @@
  */
 
 require_once '../Modelo/CarroModelo.php';
+
+$modelo = new CarroModelo();
+
+$carros = $modelo->mostrarCarros();
+
+include_once '../vista/CarroVista.php';
